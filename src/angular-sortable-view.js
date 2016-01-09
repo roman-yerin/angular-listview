@@ -267,13 +267,6 @@
 						$helper = void 0;
 						$original = void 0;
 
-						// sv-on-stop callback
-						onStop($scope, {
-							$part: originatingPart.model(originatingPart.scope),
-							$index: index,
-							$item: originatingPart.model(originatingPart.scope)[index]
-						});
-
 						if($target){
 							$target.element.removeClass('sv-candidate');
 							var spliced;
@@ -301,6 +294,13 @@
 								});
 
 						}
+						// sv-on-stop callback
+						onStop($scope, {
+							$part: originatingPart.model(originatingPart.scope),
+							$index: index,
+							$item: originatingPart.model(originatingPart.scope)[index]
+						});
+
 						$target = void 0;
 
 						$scope.$root && $scope.$root.$$phase || $scope.$apply();
